@@ -1,0 +1,51 @@
+<app-dashboard></app-dashboard>
+
+<!-- <p>
+  test works!
+</p>
+<p>
+  {{ newcomponent }}
+</p> -->
+<!-- <div>
+  Today's Date : {{todaydate}}
+</div> -->
+<!-- <div class="row grid example col s12 offset- s3">
+  <table>
+    <tr>
+      <td>Name:</td><td><input type="text" #list name="name"></td>
+    </tr>
+    <tr>
+      <td><button (click)= "add(list.value)" (click)="list.value=''">Add</button></td>
+    </tr>
+
+  </table>
+</div>
+<div> -->
+  <!-- <button (click)="animate()">Click Me</button> -->
+  <!-- <div [@myanimation] = "state">
+     <img src="assets/images/images.png" (click)="animate()" width="100" height="100">
+  </div>
+</div> -->
+
+
+<div class="row grid-example  col s12 offset-s3 " >
+    <form class="col s6 offset-s3 "  [formGroup]="addlistform">
+      <div class="row">
+        <div class="input-field col s2">
+          <span>Name :</span> 
+        </div>
+        <div class="input-field col s6">
+         <input placeholder="List Name" formControlName="name" #list name="name" type="text" class="validate">
+          <label for="name">List Name</label>
+        </div>
+      </div>
+      <div class="row grid-example">
+        <div class="col s12 offset-s2 ">
+            <a class="waves-effect waves-light btn #4caf50 green col s2" (click)= "add(list.value)">Add</a>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </form>
+</div>
+
+

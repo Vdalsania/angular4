@@ -1,0 +1,89 @@
+<app-dashboard></app-dashboard>
+
+ 
+  
+      <!-- <h4>
+        {{viewdata |uppercase}}
+      </h4> -->
+
+    <!-- <div>
+      <h3> Month:
+        <select (change)="onMonthsChange($event)">
+          <option value="0">SelectMonth</option>
+          <option  *ngFor="let i of Month">{{i}}</option>
+        </select>
+      </h3>
+    </div> -->
+
+    <!-- <div>
+      <span *ngIf="isvisible; then condition1 else condition2">valid</span>
+      <ng-template #condition1>valid</ng-template>
+      <ng-template #condition2>invalid</ng-template>
+    </div> -->
+    <!-- <div class="message">
+      <span *ngIf="isvisible; then condi1 else condi2"></span>
+      <ng-template #condi1>Please select month</ng-template>
+      <ng-template #condi2>Thank you!</ng-template>
+    </div> -->
+    <br />
+    <!-- <div>
+      <button  (click)="myClickFunction($event)">
+          Click Me
+      </button>
+    </div> -->
+    <!-- <div>
+      <h1> Custom Pipes </h1>
+      <h3>Square root of 25 is:{{ 25 | sqrt }}</h3>
+      <h3>Square root is 225 is : {{225 | sqrt}}</h3>
+    </div> -->
+    <!-- <div>{{todaydate}}</div> -->
+    
+        <div class=" row grid-example col s12 offset-s3">
+          <button routerLink="/dashboard/test/" class="waves-effect waves-light btn #4caf50 green col s1 offset-s3">Add<i class="material-icons right">add</i></button>
+        </div>
+        <router-outlet></router-outlet>
+          <div class=" row grid-example  col s12 offset-s3 ">
+            <table class="striped #bbdefb blue lighten-4 responsive-table col s6 offset-s3">
+              <thead>
+                <tr>
+                  <!-- <th>ID</th> -->
+                  <th>Name</th>
+                  <!-- <th>Edit</th> -->
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <!-- <td>{{data1.data && i.list_id}}</td> -->
+              <tbody>
+                <tr *ngFor = "let i of pagedItems">
+                  <!-- <td *ngIf="i.list_id === EditRowID"><input type="text" [ngModel]="i.list_name"/></td> -->
+                  <!-- <td *ngIf="i.list_id !== EditRowID" (click)="dataEdit(i.list_id)">{{data1.data && i.list_name}}</td> -->
+                  <td contenteditable="true"  (blur)="dataEdit(i.list_id, $event)">{{data1.data && i.list_name}}</td>
+                  <!-- <td><button class="waves-effect waves-light btn #ec407a pink lighten-1" (click)="dataEdit(i.list_id)" ><i class="material-icons right">edit</i></button></td> -->
+                  <td><button class="waves-effect waves-light btn #4db6ac teal lighten-2" (click)="dataDelete(i.list_id)"><i class="material-icons right">delete</i></button></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <div class="row grid-example col s12 offset-s3">
+                  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                    <li [ngClass]="{disabled:pager.currentPage === 1}">
+                      <a (click)="setPage(1)">First</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === 1}">
+                      <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                    </li>
+                    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                      <a (click)="setPage(page)">{{page}}</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                      <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                      <a (click)="setPage(pager.totalPages)">Last</a>
+                    </li>
+                  </ul>
+                </div>
+              </tfoot>
+            </table>
+          </div>
+    <!-- </div> -->
+
