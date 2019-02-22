@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class PaginationService {
 
   constructor() { }
-  getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
+  getPager(totalItems: number, currentPage: number = 1, pageSize: number = 5) {
     // calculate total pages
     let totalPages = Math.ceil(totalItems / pageSize);
 
@@ -18,7 +18,7 @@ export class PaginationService {
     }
     
     let startPage: number, endPage: number;
-    if (totalPages <= 10) {
+    if (totalPages <= 5) {
         // less than 10 total pages so show all
         startPage = 1;
         endPage = totalPages;
